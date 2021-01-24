@@ -305,7 +305,7 @@ footer p {
         font-size: 30px;
     }
     .game-board__main-color {
-        height: 150px;
+        height: 120px;
         font-size: 2rem;
     }
 
@@ -362,7 +362,7 @@ footer p {
     }
 
     .game-board__main-color {
-        height: 150px;
+        height: 120px;
         margin: 0 auto;
         width: calc(50% - 20px);
     }
