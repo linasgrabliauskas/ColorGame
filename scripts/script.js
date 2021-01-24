@@ -25,6 +25,15 @@ let timeUp = true
 let fullTimer, timer
 
 // Functions
+// - Functions: Utility functions
+function setDisplayNone(...queries){
+    queries.forEach(query => query.style.display = 'none')
+}
+function setDisplayBlock(...queries){
+    queries.forEach(query => query.style.display = 'block')
+}
+
+// - Functions: Main functions
 function setColor() {
     boxes = document.querySelectorAll(".box")
     boxes.forEach(box => box.addEventListener("click", pickColor))
@@ -42,10 +51,8 @@ function setColor() {
 
 function startGame() {
     // Reset blocks
-    headline.style.display = 'none'
-    description.style.display = 'none'
-    startGameBtn.style.display = 'none'
-    scoreBlock.style.display = 'block'
+    setDisplayNone(headline, description, startGameBtn)
+    setDisplayBlock(scoreBlock)
     mainColorBlock.style.display = 'flex'
     // Clear intervals
     clearTimeout(fullTimer)
@@ -80,15 +87,8 @@ function setLevel(e){
     score = 0
     scoreAmount.innerText = score
     // Reset blocks
-    headlineBlock.style.display = 'block'
-    headline.style.display = 'block'
-    description.style.display = 'block'
-    startGameBtn.style.display = 'block'
-    gameBlock.style.display = 'block'
-    mainColorBlock.style.display = 'none'
-    scoreBlock.style.display = 'none'
-    headlineHome.style.display = 'none'
-    scoreboardBlock.style.display = 'none'
+    setDisplayBlock(headlineBlock, headline, description, startGameBtn, gameBlock)
+    setDisplayNone(headlineHome, mainColorBlock, scoreBlock, scoreboardBlock)
     // Clear timers if game already running
     clearTimeout(fullTimer)
     clearInterval(timer)
@@ -121,24 +121,16 @@ function setLevel(e){
 }
 
 function setHomePage(){
-    headline.style.display = 'none'
-    description.style.display = 'none'
-    startGameBtn.style.display = 'none'
-    scoreBlock.style.display = 'none'
-    scoreboardBlock.style.display = 'none'
-    headlineBlock.style.display = 'block'
-    gameBlock.style.display = 'block'
-    headlineHome.style.display = 'block'
+    setDisplayNone(headline, description, startGameBtn, scoreBlock, scoreboardBlock)
+    setDisplayBlock(headlineBlock, gameBlock, headlineHome)
     mainColorBlock.style.display = 'flex'
     setColor()
 }
 
 function setScoreboardPage(){
     // Reset blocks
-    scoreBlock.style.display = 'none'
-    headlineBlock.style.display = 'none'
-    gameBlock.style.display = 'none'
-    scoreboardBlock.style.display = 'block'
+    setDisplayNone(scoreBlock, headlineBlock, gameBlock)
+    setDisplayBlock(scoreboardBlock)
     let scoresArr
     // Take data from local storage
     if (localStorage.hasOwnProperty('findColorGame')){
@@ -149,7 +141,7 @@ function setScoreboardPage(){
     }
     // Filter scores without names or score = 0
     let scoreData = scoresArr.filter(score => score.nick && score.score)
-    // Filter scores data by score
+    // Sort scores data by score
     let sortedScores = scoreData.sort((a,b) => b.score - a.score)
     let scoresElements = ''
     sortedScores.forEach((score, index) => {
