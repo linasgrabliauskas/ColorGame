@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find A Color Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="conatiner">
+            <ul class="navigation">
+                <li class="navigation__item"><a class="home" href="#"><span>HOME</span> <i class="fas fa-home"></i></a></li>
+                <li class="navigation__item"><a class="scoreboard" href="#"><span>HIGHSCORES </span><i class="fas fa-trophy"></i></a></li>
+                <li class="navigation__item"><a class="level" href="#" data-level='9' data-time='15000'><i class="far fa-star"></i> EASY</a></li>
+                <li class="navigation__item"><a class="level" href="#" data-level='16'data-time='20000'><i class="fas fa-star-half-alt"></i> MEDIUM</a></li>
+                <li class="navigation__item"><a class="level" href="#" data-level='25'data-time='25000'><i class="fas fa-star"></i> HARD</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="headline-section">
+            <div class="container">
+                <h1>Find A Color Game</h1>
+                <section class="headline-home">
+                    <p class="headline-home-description">Test Your Color Matching Skills!</p>
+                    <p class="headline-home-description">Match the main color with given ones</p>
+                    <p class="headline-home-description"><strong>Choose Your Level Above</strong></p>
+                </section>
+                <h3 class="game-level-headline">EASE LEVEL</h3>
+                <p class="game-level-description">Match the main color with given ones</p>
+                <button id="start-game-btn">Start game</button>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div class="container">
+                <div class="game-board">
+                    <div class="game-board__main-color">Find this color</div>
+                    <div class="game-board__colors">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="score-section">
+            <div class="container">
+                <p id="score-output">Your score: <span id="score-amount">0</span></p>
+                <p id="time-left-output">Time left: <span id="time-amount">15 seconds</span></p>
+            </div>
+        </section>
+
+        <section class="scoreboard-section">
+            <div class="container">
+                <h2 class="score-title">Highscore</h2>
+                <table>
+                    <tbody class="table-body">
+                    </tbody>
+                  </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; All rights reserved |<script>document.write(new Date().getFullYear())</script></p>
+        </div>
+    </footer>
+</body>
+</html>
