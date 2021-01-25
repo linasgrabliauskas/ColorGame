@@ -24,7 +24,7 @@ let time = 15000
 let timeUp = true
 let fullTimer, timer
 
-// Functions
+// Functions 
 // - Functions: Utility functions
 function setDisplayNone(...queries){
     queries.forEach(query => query.style.display = 'none')
@@ -40,7 +40,7 @@ function setColor() {
     boxes.forEach(box => {
         let h = Math.floor(Math.random()* 359)
         let s = Math.floor(Math.random()* 359) + '%'
-        let l = Math.floor(Math.random()* 50) + '%'
+        let l = Math.floor(Math.random()* 16 + 15) + '%'
         box.style.backgroundColor = `hsl(${h},${s},${l})`
     })
     let i = Math.floor(Math.random() * boxes.length)
@@ -102,18 +102,15 @@ function setLevel(e){
     timeLeftOutput.innerText = `${time / 1000} seconds`
     setColor()
     if (boxCount === 9) boxes.forEach(box => {
-        box.style.width = 'calc(33.33% - 10px)'
-        box.style.height = `4em`
+        box.classList.add('box--level1')
         levelTitle.innerText = 'EASY LEVEL'
     })
     if (boxCount === 16) boxes.forEach(box => {
-        box.style.width = 'calc(25% - 10px)'
-        box.style.height =  `3em`
+        box.classList.add('box--level2')
         levelTitle.innerText = 'MEDIUM LEVEL'
     })
     if (boxCount === 25) boxes.forEach(box => {
-        box.style.width = 'calc(20% - 10px)'
-        box.style.height = `2.5em`
+        box.classList.add('box--level3')
         levelTitle.innerText = 'HARD LEVEL'
     })
 }

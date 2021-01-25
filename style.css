@@ -145,6 +145,19 @@ header {
     transition: all 500ms;
 }
 
+.box--level1{
+    width: calc(33.33% - 10px);
+    height: 4em;
+}
+.box--level2{
+    width: calc(25% - 10px);
+    height: 3em;
+}
+.box--level3{
+    width: calc(20% - 10px);
+    height: 2.5em;
+}
+
 .box:hover {
     cursor: pointer;
     transform: scale(1.1);
