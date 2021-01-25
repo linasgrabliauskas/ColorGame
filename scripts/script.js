@@ -40,7 +40,7 @@ function setColor() {
     boxes.forEach(box => {
         let h = Math.floor(Math.random()* 359)
         let s = Math.floor(Math.random()* 359) + '%'
-        let l = Math.floor(Math.random()* 16 + 15) + '%'
+        let l = Math.floor((Math.random()* 16) + 30) + '%'
         box.style.backgroundColor = `hsl(${h},${s},${l})`
     })
     let i = Math.floor(Math.random() * boxes.length)
