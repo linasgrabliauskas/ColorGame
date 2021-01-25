@@ -43,8 +43,6 @@ function setColor() {
         let l = Math.floor(Math.random()* 50) + '%'
         box.style.backgroundColor = `hsl(${h},${s},${l})`
     })
-    // Mini Bug fix
-    if (boxes.length === 0) return
     let i = Math.floor(Math.random() * boxes.length)
     mainColorBlock.style.backgroundColor = boxes[i].style.backgroundColor
 }
@@ -160,7 +158,7 @@ function setScoreboardPage(){
 function addHighscore(){
     // Input name
     let name = prompt("Your name or nickname:")
-    // Get the existing data
+    // Get the existing data from LS
     let scoresArr
     if (localStorage.hasOwnProperty('findColorGame')){
         let scoresJSON = localStorage.getItem('findColorGame')

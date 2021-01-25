@@ -247,6 +247,7 @@ footer p {
 /* Tablet  768px+ */
 @media screen and (min-width: 768px) {
     .fa-star, .fa-star-half-alt {
+        pointer-events: none;
         display: inline-block;
         color: #DAA520;
         transition: transform 1000ms;
@@ -334,8 +335,8 @@ footer p {
     
     /* ////// Tablet: Footer //// */
     footer {
-        height: 80px;
-        padding: 25px;
+        height: 60px;
+        padding: 18px;
         background-color: #f0f0f0;
     }
     footer p {
